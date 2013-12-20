@@ -1,0 +1,9 @@
+{
+  "name": "com.edmunds.widgets.nvc",
+  "version": "0.0.1",
+  "description": "Edmunds New Vehicle Configurator Widget",
+  "private": true,
+  "scripts": {
+    "install": "bower install"
+  }
+}

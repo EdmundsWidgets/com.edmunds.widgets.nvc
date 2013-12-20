@@ -1,0 +1,13 @@
+{
+  "name": "com.edmunds.widgets.nvc",
+  "version": "0.0.1",
+  "description": "Edmunds New Vehicle Configurator Widget",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
