@@ -1,0 +1,23 @@
+@import "../mixins.less";
+@import "../images.less";
+@import "../variables.less";
+@import "../layout.less";
+@import "../button.less";
+
+@import "green/dark.less";
+@import "green/price.less";
+@import "simple/components.less";
+
+.nvcwidget-price {
+  background: url(@greenPriceBackgroundDark) 0 0 repeat-x;
+}
+
+.nvcwidget .get-started {
+  color: white;
+  .arrow {
+    background-image: url('../img/dark/get-started-arrow.png');
+  }
+}
+
+@import "../responsive.less";
+@import "common/dark.less";

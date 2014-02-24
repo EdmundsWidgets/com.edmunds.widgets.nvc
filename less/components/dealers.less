@@ -1,0 +1,101 @@
+.nvcwidget .nvcwidget-list-dealer {
+
+  .tab-bar {
+
+    .navbar {
+      .clearfix();
+      list-style: none;
+      margin: 0;
+      padding: 0 15px;
+    }
+
+    .tab {
+      background-position: right -25px;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      float: left;
+      font-size: 11px;
+      line-height: 24px;
+      margin-left: -11px;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+      .opacity(30);
+
+      span {
+        padding: 0 10px;
+      }
+    }
+
+    .tab:first-child {
+      margin-left: 0;
+    }
+
+    .tab:hover {
+      .opacity(70);
+    }
+
+    .tab.active {
+      cursor: default;
+      z-index: 3;
+      &, &:hover {
+        .opacity(100);
+      }
+    }
+
+    .tab > div {
+      background-position: -10px -50px;
+      background-repeat: no-repeat;
+    }
+
+    .tab > div > div {
+      background-position: 0 0;
+      background-repeat: repeat-x;
+      margin: 0 15px 0 5px;
+    }
+
+    .tab-premier span {
+      background-position: center 0;
+      background-repeat: no-repeat;
+      display: inline-block;
+      text-indent: -999em;
+      height: 14px;
+      margin-top: -3px;
+      vertical-align: middle;
+      width: 93px;
+    }
+
+    .tab-strip {
+      border-top: 1px solid;
+      margin-top: -1px;
+      padding-bottom: 2px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .tab-content {
+    overflow-y: auto;
+    .list {
+      overflow-y: auto;
+      max-height: none;
+    }
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  .tab-panel-all .premier-dealer {
+    .item-inner-bg {
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      padding-top: 18px;
+    }
+  }
+
+}

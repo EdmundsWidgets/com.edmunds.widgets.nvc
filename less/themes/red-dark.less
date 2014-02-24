@@ -1,0 +1,52 @@
+@import "../mixins.less";
+@import "../images.less";
+@import "../variables.less";
+@import "../layout.less";
+@import "../button.less";
+
+@import "red/dark.less";
+@import "red/price.less";
+@import "simple/components.less";
+
+.nvcwidget .nvcwidget-tab-inner {
+  height: 779px;
+}
+
+.nvcwidget-header {
+  .border-radius(0);
+  height: auto;
+  padding: 0;
+  > div {
+    .border-top-radius(5px);
+    .clearfix();
+    height: 20px;
+    padding: 10px 15px;
+  }
+}
+
+.nvcwidget .nvcwidget-options-outer {
+  border-top-color: #555;
+}
+
+.nvcwidget-options-outer .features-list .features-list-item.included:hover .feature-price {
+  color: green;
+}
+
+.selected-features-list .features-list-item.included .feature-price {
+  color: #73bf4d;
+}
+
+.nvcwidget .get-started {
+  color: white;
+  .arrow {
+    background-image: url('../img/dark/get-started-arrow.png');
+  }
+}
+
+@import "../responsive.less";
+@import "common/dark.less";
+@import "red/responsive.less";
+
+.email-print-icons {
+  border-top-color: #666;
+}

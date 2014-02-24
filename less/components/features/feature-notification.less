@@ -1,0 +1,45 @@
+.feature-notification {
+  line-height: 1.5;
+  padding: 5px 15px 10px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .feature-name {
+    color: #666;
+  }
+
+  .feature-notification-buttons {
+    margin-top: 10px;
+    text-align: center;
+    white-space: nowrap;
+
+    button {
+      .buttonBackground(#ffffff, #f3f3f3, #a4a4a4, #0f4d8f);
+      cursor: pointer;
+      display: inline-block;
+      font-family: Arial, sans-serif;
+      font-size: 9px;
+      font-weight: bold;
+      float: none;
+      height: auto;
+      line-height: 14px;
+      margin: 0 4px;
+      padding: 0 4px;
+      text-transform: uppercase;
+
+      &:hover {
+        .buttonBackground(#4275ad, #296194, #a4a4a4, #fff);
+      }
+    }
+  }
+
+}

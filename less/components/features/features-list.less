@@ -1,0 +1,351 @@
+.nvcwidget-options-outer .features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+
+  .features-list-item {
+    .clearfix();
+    margin: 1px 0;
+
+    label {
+      cursor: pointer;
+      display: block;
+      padding: 2px 15px;
+    }
+
+    input[type="checkbox"] {
+      float: left;
+      margin: 3px 5px 0 0;
+      margin-top: 1px \9;
+      *margin-top: 0;
+      line-height: normal;
+      vertical-align: middle;
+    }
+
+    .feature-price,
+    .feature-name {
+      display: block;
+    }
+
+    .feature-name {
+      overflow: hidden;
+    }
+
+    .feature-price {
+      color: #666;
+      float: right;
+      margin-left: 5px;
+      text-align: right;
+      width: 45px;
+    }
+
+  }
+
+  .features-list-item.active,
+  .features-list-item:hover {
+    background: #e5e5e5;
+    color: black;
+  }
+
+  .features-list-item.excluded {
+    color: black;
+    /*
+    > label .feature-name {
+      background: url(@notificationIcon) no-repeat right 5px;
+      padding-right: 15px;
+    }
+    */
+  }
+
+  .features-list-item.included {
+    label {
+      cursor: auto;
+    }
+    .feature-price {
+      color: green;
+      font-weight: bold;
+    }
+  }
+
+  .features-list-item.included,
+  .features-list-item.included:hover,
+  .features-list-item.selected,
+  .features-list-item.selected:hover {
+    background: #e3efcf;
+  }
+
+  .features-list-item.active,
+  .features-list-item.selected.active {
+    background: #e5e5e5;
+    color: black;
+  }
+
+  .features-list-item.color [type="checkbox"]{
+    display: none;
+  }
+  .features-list-item.color .feature-color {
+    background: #fff;
+    border: 1px solid white;
+    .box-shadow(0 0 3px rgba(0,0,0,0.5));
+    float: left;
+    height: 12px;
+    margin: 3px 5px 0 0;
+    position: relative;
+    width: 24px;
+
+    i {
+      background: url(@optionColorsCheck) no-repeat center center;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+  }
+
+  .features-list-item.color.selected,
+  .features-list-item.color.inlcuded {
+    .feature-color i {
+      display: block;
+    }
+  }
+
+  .features-list-item.unavailable label {
+    cursor: auto;
+  }
+
+  .features-list-item.color .feature-color .feature-primary-color {
+    height: 12px;
+    overflow: hidden;
+  }
+
+  .features-list-item.color .feature-color .feature-secondary-color {
+    float: right;
+    height: 12px;
+    width: 12px;
+  }
+
+  .notification-icon {
+    background: url(@notificationIcon) no-repeat 0 0;
+    display: inline-block;
+    height: 9px;
+    margin-right: 5px;
+    width: 9px;
+  }
+
+  .features-list-item .notification-icon {
+    display: none;
+  }
+
+  .features-list-item.excluded .notification-icon {
+     display: inline-block;
+  }
+
+}
+
+.nvcwidget-options {
+  .alert {
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+.nvcwidget-options-outer .category-features-list > button {
+  float: left;
+  margin: 15px;
+}
+
+.nvcwidget-options-outer {
+
+  .overlay {
+    background: white;
+    .opacity(50);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+}
+
+.selected-features-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+
+  .features-list-item {
+    .clearfix();
+    margin: 1px 0;
+    line-height: 1.3;
+    padding: 6px 15px;
+
+    .feature-price,
+    .feature-name {
+      display: block;
+    }
+
+    .feature-name {
+      overflow: hidden;
+      margin-left: 20px;
+    }
+
+    .feature-price {
+      color: #666;
+      float: right;
+      margin-left: 5px;
+      text-align: right;
+      width: 50px;
+    }
+
+    .icon-remove {
+      background: url(@removeOptionIcon) no-repeat center center;
+      float: left;
+      display: block;
+      padding: 3px;
+      width: 8px;
+      height: 8px;
+      position: relative;
+
+      .nvcwidget-tooltip {
+        display: none;
+        padding: 5px 10px;
+        line-height: 1;
+        right: auto;
+        left: 100%;
+        margin-left: 5px;
+        width: auto;
+        top: -5px;
+        .arrow-left {
+          top: 4px;
+        }
+      }
+    }
+
+  }
+
+  .features-list-item:hover,
+  .features-list-item.active {
+    background: #d3d5d4;
+  }
+
+  .features-list-item .icon-remove:hover .nvcwidget-tooltip {
+    display: inline-block;
+  }
+
+  .features-list-item.unavailable,
+  .features-list-item.included {
+    .icon-remove {
+      display: none;
+    }
+  }
+
+  .features-list-item.included .feature-price {
+    color: green;
+  }
+
+  .feature-notification {
+    padding-left: 0;
+    padding-right: 0;
+    p {
+      margin: 3px 0;
+    }
+  }
+
+}
+
+.selected-features-header,
+.selected-features-footer {
+  font-weight: bold;
+  line-height: 1.3;
+
+  .clearfix();
+
+  .feature-name,
+  .feature-price {
+    display: block;
+  }
+
+  .feature-name {
+    overflow: hidden;
+  }
+
+  .feature-price {
+    float: right;
+    text-align: right;
+    margin-left: 5px;
+    width: 50px;
+  }
+
+  .price-dropdown {
+    float: right;
+    height: 14px;
+    margin-left: 5px;
+    position: relative;
+    .arrow {
+      border: solid 6px;
+      border-color: gray transparent transparent transparent;
+      content: "";
+      cursor: pointer;
+      display: block;
+      margin-top: 4px;
+      height: 0;
+      width: 0;
+    }
+    ul {
+      background: white;
+      border: 1px solid #ccc;
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: 5px 0;
+      position: absolute;
+      right: 0;
+      top: 13px;
+      li {
+        color: #285b8e;
+        cursor: pointer;
+        font-size: 11px;
+        font-weight: normal;
+        line-height: 1;
+        padding: 5px 20px;
+        text-align: right;
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+    &:hover ul {
+      display: block;
+    }
+  }
+
+}
+
+.selected-features-header {
+  .headers-row,
+  .base-price-row {
+    .clearfix();
+    padding: 6px 15px;
+  }
+  .base-price-row .feature-name {
+    margin-left: 20px;
+  }
+}
+
+.selected-features-footer {
+  border-top: 1px solid #d6d5d3;
+
+  .total-price-row {
+    padding: 6px 15px;
+  }
+
+  .feature-name {
+    margin-left: 20px;
+  }
+
+}

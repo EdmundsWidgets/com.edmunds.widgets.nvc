@@ -1,0 +1,148 @@
+.nvcwidget-price {
+  //background: url(@greenPriceBackgroundLight) 0 0 repeat-x;
+  background: 0 0 no-repeat;
+  color: #8d3600;
+  font: bold 9px/1 @fontFamily;
+  height: 90px;
+  //margin-left: -18px;
+  //margin-right: @innerHorizontalGutter - 2;
+
+  > div {
+    background: right -200px no-repeat;
+
+    > div {
+      background: 0 -100px repeat-x;
+      margin: 0 10px 0 21px;
+      //padding: 8px 0px 8px 0px;
+      min-height: 74px;
+    }
+  }
+
+  &,
+  > div,
+  > div > div {
+    background-image: url(@yellowPriceBackground);
+  }
+
+}
+
+.nvcwidget-price-graph {
+  color: black;
+  font: bold 9px/1 @fontFamily;
+  padding: 7px 18px 15px 18px;
+
+  .left {
+    float: left;
+    position: relative;
+    max-width: 100%;
+    max-width: 99.99%\0; // fix for IE8A
+    width: 45%;
+
+    .middle {
+      left: 100%;
+      position: absolute;
+      top: 0;
+      margin-left: -8px;
+    }
+
+  }
+  .dash {
+    background-color: #894300;
+    position: absolute;
+    display: block;
+    height: 5px;
+    margin-top: -3px;
+    left: 0%;
+    top: 8px;
+    width: 2px;
+    z-index: 0;
+    &.rights {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .left + .right {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .graph {
+    padding: 6px 0 6px;
+    position: relative;
+
+    &, .left, .right, .middle {
+      height: 2px;
+    }
+
+    .left {
+      background-color: #2f9700;
+      border-top: 1px solid #267900;
+    }
+
+    .right {
+      background-color: #c53b3d;
+      border-top: 1px solid #9e2f31;
+    }
+
+    .middle {
+      background: url(@redPricePointerSprite) 0 0 no-repeat;
+      display: block;
+      height: 13px;
+      margin-top: -2px;
+      top: -4px;
+      width: 13px;
+      z-index: 1;
+    }
+  }
+
+  .name {
+    color: #8d3600;
+    text-shadow: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+  }
+  .value {
+    color: #444;
+    display: inline-block;
+    border-bottom: 1px dotted #444;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    line-height: 100%;
+    position: relative;
+    &:hover {
+      cursor:pointer;
+      .nvcwidget-tooltip {
+        display:block;
+      }
+    }
+  }
+  .top {
+    text-align: right;
+    .top-inner {
+      display: inline-block;
+      text-align: left;
+      .name {
+        text-align: left;
+        width: 90px;
+      }
+    }
+    //.value { text-shadow: 0px -1px 0px #479012; }
+    sup {
+      font-size: 12px;
+      margin-right: 2px;
+    }
+
+    .name {
+      margin-bottom: 0;
+    }
+  }
+  .bottom {
+    sup {
+      top: -2px;
+      margin-right: 1px;
+    }
+    .right {
+      overflow: inherit;
+    }
+  }
+}

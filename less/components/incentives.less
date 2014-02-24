@@ -1,0 +1,79 @@
+.incentives {
+  padding: 15px 15px 5px;
+
+  .switcher {
+    background: url(@onOffButton) no-repeat 0 0;
+    cursor: pointer;
+    display: inline-block;
+    height: 17px;
+    width: 40px;
+    &.on { background-position: 0 0; }
+    &.off { background-position: -40px 0; }
+  }
+
+  .incentive-toggle,
+  .incentive-info {
+    .clearfix();
+  }
+
+  .incentive-toggle {
+    margin-bottom: 5px;
+    .incentive-label {
+      font-size: 11px;
+      font-weight: bold;
+      overflow: hidden;
+      i {
+        background: url(@spriteIcons) no-repeat 0 0;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: 4px;
+        margin-top: -4px;
+        vertical-align: middle;
+      }
+    }
+    .switcher-wrapper {
+      color: #999;
+      float: right;
+      font-size: 9px;
+      text-transform: uppercase;
+
+      .switcher {
+        vertical-align: middle;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .incentive-info {
+    color: #646472;
+    font-size: 11px;
+
+    .incentive-price {
+      float: right;
+    }
+    .incentive-subprogram {
+      border-bottom: 1px dotted #646472;
+      margin-left: 20px;
+      position: relative;
+      overflow: hidden;
+      &:hover {
+        cursor: pointer;
+        .nvcwidget-tooltip {
+          display: block;
+          top: auto;
+          bottom: 23px;
+          left: -20px;
+          .arrow-left {
+            border-width: 7px 6.5px 0 6.5px;
+            border-color: #fff transparent transparent transparent;
+            top: auto;
+            bottom: -7px;
+            left: 60px;
+          }
+        }
+      }
+    }
+  }
+
+}

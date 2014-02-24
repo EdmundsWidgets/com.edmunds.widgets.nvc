@@ -1,0 +1,28 @@
+@import "../mixins.less";
+@import "../images.less";
+@import "../variables.less";
+@import "../layout.less";
+@import "../button.less";
+
+@import "red/light.less";
+@import "red/price.less";
+
+.nvcwidget .nvcwidget-tab-inner {
+  height: 779px;
+}
+
+.nvcwidget-header {
+  .border-radius(0);
+  height: auto;
+  padding: 0;
+  > div {
+    .border-top-radius(5px);
+    .clearfix();
+    height: 20px;
+    padding: 10px 15px;
+  }
+}
+
+@import "../responsive.less";
+@import "common/light.less";
+@import "red/responsive.less";
