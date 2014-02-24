@@ -9,5 +9,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "backbone": "1.0.0",
+    "jquery": "1.11.0",
+    "requirejs": "2.1.11",
+    "underscore": "1.4.3"
+  }
 }
