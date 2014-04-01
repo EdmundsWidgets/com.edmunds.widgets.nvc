@@ -7,7 +7,12 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
-  ]
+    "test"
+  ],
+  "devDependencies": {
+    "jquery": "2.1.0",
+    "backbone": "1.1.2",
+    "underscore": "1.6.0",
+    "requirejs": "2.1.11"
+  }
 }
