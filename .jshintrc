@@ -1,0 +1,8 @@
+{
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "quotmark": "single",
+  "unused": true,
+  "onevar": true
+}
