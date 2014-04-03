@@ -19,12 +19,20 @@
         // Karma serves files from '/base'
         baseUrl: '/base/src',
 
-        // ask Require.js to load test files
-        deps: getSpecFiles(karma.files),
+        paths: {
+            jquery: '../bower_components/jquery/dist/jquery',
+            underscore: '../bower_components/underscore/underscore',
+            backbone: '../bower_components/backbone/backbone'
+        },
 
-        // start test run, once Require.js is done
-        callback: karma.start
+        deps: ['backbone']
 
+    });
+
+    // first we need to load Backbone, Underscore and jQuery
+    require(['backbone'], function() {
+        // then load spec files and start Karma
+        require(getSpecFiles(karma.files), karma.start);
     });
 
 }());
