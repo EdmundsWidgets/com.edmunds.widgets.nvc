@@ -10,6 +10,7 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
+            { pattern: 'bower_components/**/*.js', included: false },
             { pattern: 'src/**/*.js', included: false },
             { pattern: 'test/unit/**/*.spec.js', included: false },
             'test/testsuite.js'
