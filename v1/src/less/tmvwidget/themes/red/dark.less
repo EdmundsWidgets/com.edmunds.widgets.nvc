@@ -1,0 +1,37 @@
+.tmvwidget {
+  background: url(@waveDark) 0 bottom repeat-x;
+  .border-top-radius(@borderRadius - @borderWidth);
+  .border-bottom-radius(0);
+  border: 0;
+  padding-bottom: 5px;
+
+  .logo, .title, .copy {
+    color: #ccc;
+  }
+
+  .logo {
+    background: url(@edmWhiteLogo) 100% 0 no-repeat;
+  }
+
+}
+
+.tmvwidget-header {
+  background: url(@titleDark) 0 bottom repeat-x;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 15px;
+
+  .question {
+    background: url(@questionSignDark) no-repeat 0 0;
+  }
+
+}
+
+.tmvwidget-header .logo { display: none; }
+
+.tmvwidget-inner {
+  background: url(@stripDark) 0 bottom repeat-x;
+  border: 1px solid #404040;
+  border-bottom: 0;
+  .border-top-radius(@borderRadius - @borderWidth);
+}

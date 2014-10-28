@@ -1,0 +1,284 @@
+@import "bootstrap/bootstrap.less";
+
+body {
+  background: #f2f2f2;
+}
+
+hr {
+  border-top-color: #bbb;
+}
+
+#main {
+  padding-top: 20px;
+}
+
+#widget-configurator {
+  background: #ddd;
+
+  legend {
+    border-bottom-color: #bbb;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .control-label {
+    font-weight: bold;
+    cursor: default;
+    margin-bottom: 5px;
+  }
+
+  .form-actions {
+    background: none;
+    border-top-color: #bbb;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 10px;
+    text-align: center;
+    .btn-primary {
+      background: #bf2f37;
+      .border-radius(0);
+      color: white;
+      text-transform: uppercase;
+      i {
+        display: none;
+      }
+    }
+    .btn-link {
+      color: #2f649a;
+    }
+  }
+
+  .label-required {
+    font-size: 10px;
+    font-weight: normal;
+    line-height: 1;
+    padding: 2px 4px;
+  }
+
+  .control-apikey {
+    position: relative;
+    .apikey-entered {
+      .clearfix();
+      line-height: 30px;
+      .btn {
+        float: right;
+        font-size: 12px;
+      }
+      span {
+        margin-left: 7px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  .tooltip-error {
+    .opacity(95);
+    &.bottom {
+      margin-top: 0;
+      .tooltip-arrow {
+        border-bottom-color: #bf2f37;
+      }
+    }
+    &.right {
+      .tooltip-arrow {
+        border-right-color: #bf2f37;
+      }
+    }
+    .tooltip-inner {
+      background: #bf2f37;
+    }
+  }
+
+  .tab-control {
+    padding-bottom: 10px;
+    label {
+      margin-bottom: 10px;
+      display: inline-block;
+      cursor: default;
+    }
+    input[type="text"] {
+      height: 18px;
+      margin-left: 25px;
+      width: 145px;
+    }
+    select {
+      max-height: 30px;
+      width: 261px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.slider-control {
+  .ui-slider {
+    font-size: .6em;
+    margin: 0 17px 40px 15px;
+
+    .ui-slider-handle {
+      outline: none;
+    }
+    .tooltip { cursor: pointer; }
+    .tooltip-inner {
+      padding: 0px 2px;
+      width: 40px;
+    }
+  }
+}
+
+#widget-placeholder {
+  background: white;
+  border: 1px dashed #ccc;
+  float: left;
+  padding: 30px;
+  position: relative;
+
+  .corner {
+    background: url('../img/widget_corner.png') no-repeat 0 0;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    &.top { top: -6px; }
+    &.bottom { bottom: -6px; }
+    &.left { left: -6px; }
+    &.right { right: -6px; }
+  }
+}
+
+#widget-instructions {
+  margin-left: -420px;
+  width: 840px;
+}
+
+#includedMakes {
+  background: white;
+  border: 1px solid #ddd;
+  height: 200px;
+  list-style: none;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 0;
+  position: relative;
+
+  li {
+    border-top: 1px solid #ddd;
+
+    &:hover { background: #f6f6f6; }
+
+    label {
+      display: block;
+      padding: 3px 5px 3px 30px;
+      margin-bottom: 0;
+    }
+
+    [type="checkbox"] {
+      margin-right: 10px;
+    }
+
+  }
+
+  .message {
+    text-align: center;
+    padding: 5px;
+  }
+
+  li:first-child { border-top: 0; }
+
+}
+
+.checkbox.btn [type="checkbox"]{
+  margin-left: 0;
+  margin-right: 10px;
+}
+.input {
+  overflow: hidden;
+}
+
+#option_zipcode {
+  float: left;
+}
+
+.error {
+  float: left;
+  color: red;
+  font-size: 11px;
+  padding:6px;
+}
+
+.tooltip-error {
+  .tooltip-inner {
+    background-color: #ff4f4f;
+  }
+
+  // Arrows
+    &.top .tooltip-arrow {
+      border-top-color: #ff4f4f;
+    }
+    &.right .tooltip-arrow {
+      border-right-color: #ff4f4f;
+    }
+    &.left .tooltip-arrow {
+      border-left-color: #ff4f4f;
+    }
+    &.bottom .tooltip-arrow {
+      border-bottom-color: #ff4f4f;
+    }
+  }
+
+// Tooltip
+  .question {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    &:hover {
+      cursor:pointer;
+      .tooltip {
+        opacity: .90;
+        filter: alpha(opacity=90);
+        display: block;
+      }
+    }
+  }
+
+.question {
+  .tooltip {
+    display: none;
+    margin-left: 13px;
+    top: -28px;
+    .tooltip-inner {
+      text-align: left;
+      font-weight: normal;
+      a:hover {
+        color:#fff;
+      }
+    }
+  }
+}
+
+.keyword-list {
+  margin-bottom: 5px;
+
+  .label {
+    margin: 3px;
+
+    white-space: normal;
+
+    -ms-word-break: break-all;
+    word-break: break-all;
+
+     // Non standard for webkit
+    word-break: break-word;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
+    i {
+      cursor: pointer;
+      margin-left: 2px;
+    }
+  }
+
+}

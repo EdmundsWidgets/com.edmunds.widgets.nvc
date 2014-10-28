@@ -1,0 +1,27 @@
+<script src="/libs/jquery/dist/jquery.js"></script>
+<script src="/libs/bootstrap/dist/js/bootstrap.js"></script>
+
+<script>
+$(function() {
+
+	var $body = $(document.body),
+		$window = $(window),
+		navHeight = $('.navbar').outerHeight(true) + 19; // page-header.margin-top - navbar.border-bottom
+
+	$body.scrollspy({
+		target: '.sidebar',
+		offset: navHeight
+	});
+
+	$window.on('load', function () {
+		$body.scrollspy('refresh');
+	});
+
+	$('.sidebar').affix();
+
+	$('[href="#"]').click(function(event) {
+		event.preventDefault();
+	});
+
+});
+</script>

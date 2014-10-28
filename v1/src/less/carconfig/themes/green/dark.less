@@ -1,0 +1,37 @@
+.nvcwidget {
+  background: #333;
+  border: @borderWidth solid #404040;
+
+  .copy,
+  .title {
+    color: #999;
+  }
+
+  .logo {
+    background: url(@edmWhiteLogo) 0 0 no-repeat;
+  }
+
+}
+
+.nvcwidget-inner {
+  .border-radius(@borderRadius - @borderWidth);
+}
+
+.nvcwidget-header {
+  border-bottom: 1px solid #4d4d4d;
+  .logo { display: none; }
+
+  .question {
+    background: url(@questionSignDark) no-repeat 0 0;
+  }
+
+}
+
+.nvcwidget-price {
+  border-color: black;
+
+  &.disabled {
+    border-color: black;
+  }
+
+}

@@ -1,0 +1,336 @@
+.tmvwidget-price {
+  color: #8d3600;
+  font: bold 9px/1 @fontFamily;
+  background: url(@greenPriceBackground) 0 0 repeat-x;
+  height: 90px;
+
+  background: 0 0 no-repeat;
+  margin-left: -18px;
+  margin-right: @innerHorizontalGutter - 2;
+
+  > div {
+    background: right -200px no-repeat;
+
+    > div {
+      background: 0 -100px repeat-x;
+      margin: 0 10px 0 21px;
+      padding: 8px 0px 8px 0px;
+      min-height: 74px;
+    }
+  }
+
+  &,
+  > div,
+  > div > div {
+    background-image: url(@yellowPriceBackground);
+  }
+
+}
+
+.tmvwidget-price-text {
+  padding: 7px 5px;
+
+  .left {
+    float: left;
+    position: relative;
+    max-width: 100%;
+    max-width: 99.99%\0; // fix for IE8A
+    width: 45%;
+  }
+
+  .left + .right {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .prices, .labels { white-space: nowrap; }
+
+  .prices {
+    color: white;
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .labels {
+
+    .label {
+      padding: 0 5px 0 0;
+      font-size: 14px;
+      line-height: 18px;
+      color: #8d3600;
+      text-shadow: 0 1px 0 #FFE366;
+      background: none;
+      &:after { content: ":"}
+    }
+
+    .value {
+      text-shadow: 0 1px 0 #FFE366;
+      font-size: 22px;
+      font-weight: bold;
+      color: #444;
+      display: inline-block;
+    }
+
+    .top {
+      sup {
+        font-size: 12px;
+        margin-right: 2px;
+      }
+    }
+
+    .bottom {
+      padding-top: 10px;
+
+      .label, .value{
+        font-size: 11px;
+        display: inline-block;
+      }
+      .label { display: block;}
+      sup {
+        top: -2px;
+        margin-right: 1px;
+      }
+      .left {
+        float: none;
+      }
+      .right {
+        overflow: inherit;
+        float: right;
+        width: 49%;
+        text-align: left;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .value {
+      border-bottom: 1px dotted #444;
+      color: #444;
+      line-height: 100%;
+      position: relative;
+      &:hover {
+        cursor:pointer;
+        .tmvwidget-tooltip {
+          display:block;
+        }
+      }
+    }
+  }
+  &.NEW .top .value {
+    border: 0;
+    &:hover {
+      cursor: auto;
+      .tmvwidget-tooltip {
+        display:none;
+      }
+    }
+  }
+}
+
+/* RANGE */
+.tmvwidget-price-range {
+  .left {
+    float: left;
+    max-width: 99.99%;
+    position: relative;
+  }
+
+  .left + .right {
+    display: block;
+    text-align: left;
+    position: relative;
+  }
+
+  .label {
+    color: #8d3600;
+    text-shadow: 0 1px 0 #FFE366;
+    padding: 0 5px 0 0;
+    font-size: 12px;
+    background: none;
+    &:after { content: ":"}
+  }
+
+  .value {
+    font-weight: bold;
+    color: #444;
+    text-shadow: 0 1px 0 #FFE366;
+  }
+
+  .note {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+  }
+
+  span { display: inline-block; }
+
+  .pointers {
+    position: relative;
+    overflow: hidden;
+    height: 13px;
+    .graph {
+      height: 3px;
+      margin-top: 5px;
+      overflow: hidden;
+      background-color: #216f00;
+      border-bottom: 1px solid #FFE366;
+      .box-shadow(inset 0 1px 1px 0px #1a5900);
+
+      .left-part, .right-part {
+        float: left;
+        .box-shadow(inset 0 0px 1px 0px #1a5900);
+        background-color: #329200;
+        height: 3px;
+        width: 20px;
+      }
+      .right-part { float: right;}
+    }
+    .left,.right {
+      position: absolute;
+      float: none;
+      top: 0px;
+      width: 13px;
+      height: 13px;
+      background: url(@greenPricePointerSprite) 0 0 repeat-x;
+    }
+    .left { left: 15px;}
+    .right { right: 15px;}
+  }
+
+  .top {
+    .label {
+      padding-top: 13px;
+      padding-bottom: 15px;
+    }
+    .value {
+      font-size: 14px;
+    }
+    .values {
+      .left, .right {
+        border-bottom: 1px dotted #444;
+      }
+      .left { float: none; }
+      .right { float: right; }
+    }
+    sup {
+      top: -3px;
+      font-size: 10px;
+      margin-right: 2px;
+    }
+  }
+
+  .bottom {
+    padding-top: 4px;
+    clear: both;
+
+    .label, .value{
+      font-size: 11px;
+      display: inline-block;
+    }
+    sup {
+      top: -2px;
+      margin-right: 1px;
+    }
+    .label {
+      display: block;
+    }
+    .value {
+      border-bottom: 1px dotted #444;
+    }
+    .left {
+      margin-right: 6px;
+      z-index: 1;
+      width: 50%;
+    }
+    .right {
+      overflow: inherit;
+    }
+  }
+  .value {
+    line-height: 100%;
+    position: relative;
+    &:hover {
+      cursor:pointer;
+      .tmvwidget-tooltip {
+        display:block;
+      }
+    }
+  }
+}
+
+.tmvwidget-price {
+  .top {
+    .left.invalid, .right.invalid {
+      border-bottom: 0;
+    }
+  }
+  .value {
+    &.invalid {
+      border-bottom: 0;
+      sup {
+        display: none;
+      }
+      &:hover {
+        cursor: auto;
+        .tmvwidget-tooltip {
+          display:none;
+        }
+      }
+    }
+  }
+}
+
+.price-tmv-invoice {
+  .bottom {
+    .left {
+      float: none;
+    }
+    .right {
+      display: none;
+    }
+  }
+}
+
+.price-tmv {
+  .labels {
+    padding: 3px;
+  }
+  .bottom {
+    display: none;
+  }
+  .top {
+    text-align: center;
+    .label {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+
+
+.tmvwidget-price.disabled {
+  background-position: 0 -301px;
+  > div {
+    background-position: right -501px;
+    > div {
+      background-position: 0 -401px;
+    }
+
+  }
+  .graph {
+    background-color: #666;
+    border-bottom: 0;
+    .box-shadow(none);
+    .left-part { background-color: #666; .box-shadow(none);}
+    .right-part { background-color: #666; .box-shadow(none);}
+  }
+  .prices, .labels, .label, .note, .top .value, .value { color: #666; border-bottom: 0; text-shadow:none;}
+  .prices .middle { background-color: #cacaca; }
+  sup { display: none; }
+  .pointers {
+    div {
+      background-position: 0 -13px;
+    }
+  }
+}

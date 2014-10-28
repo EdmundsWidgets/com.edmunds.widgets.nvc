@@ -1,0 +1,40 @@
+.tmvwidget button {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font: bold 10px @fontFamily;
+  height: 24px;
+  line-height: 22px;
+  margin: 0;
+  padding: 0 24px;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+// Default state
+.tmvwidget button {
+  .buttonBackground(@buttonDefaultStartColor,
+                @buttonDefaultEndColor,
+                @buttonDefaultBorderColor,
+                @buttonDefaultTextColor);
+}
+
+// Active and Hover state
+.tmvwidget button:active,
+.tmvwidget button:hover {
+  .buttonBackground(@buttonHoverStartColor,
+                @buttonHoverEndColor,
+                @buttonDefaultBorderColor,
+                @buttonDefaultTextColor);
+}
+
+// Disabled state
+.tmvwidget button[disabled] {
+  cursor: not-allowed;
+  .buttonBackground(@buttonDisabledStartColor,
+                @buttonDisabledEndColor,
+                @buttonDisabledBorderColor,
+                @buttonDisabledTextColor);
+}

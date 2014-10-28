@@ -1,0 +1,316 @@
+.nvcwidget {
+  background: #f2f2f2;
+  border: @borderWidth solid #dbdbdb;
+
+  .copy {
+    color: #285b8e;
+  }
+
+  .title {
+    color: #333;
+  }
+
+  .logo{
+    color: #888;
+    a{
+      background: url(@edmDefaultLogo) 100% 0 no-repeat;
+    }
+  }
+  .noise-bg {
+    background: url(@noise);
+  }
+  input[type="text"],
+  select {
+    border: 1px solid #aaa;
+    color: #373737;
+    &[disabled] {
+      color: #999;
+    }
+  }
+  .form {
+    span span {
+      color: #cb5960;
+    }
+    label {
+      color: #aaa;
+    }
+    .nvcwidget-tooltip {
+      background-color: #C1373E;
+      span {
+        color: white;
+      }
+      .arrow-left {
+        border-color: #C1373E transparent transparent transparent;
+      }
+    }
+    .invalid {
+      input[type="text"]{
+        border-color: #C1373E;
+        &:focus {
+          .box-shadow(0 0 8px rgba(238,95,91,.6));
+        }
+      }
+    }
+  }
+}
+
+.nvcwidget-overlay {
+  background: rgba(255,255,255,0.5);
+}
+.failure-message {
+  background: #BE3037;
+  border: 1px solid #A32C31;
+  .message-header {
+    background: url(@failureMessageIcon) 0 0 no-repeat;
+  }
+}
+.success-message {
+  .message-header {
+    background: url(@successMessageIcon) 0 0 no-repeat;
+  }
+}
+
+.nvcwidget-header {
+  .question {
+    background: url(@questionSign) no-repeat 0 0;
+  }
+}
+
+.nvcwidget-footer {
+  border-top: 1px dotted #ccc;
+}
+
+// Tabs
+.nvcwidget-tabs {
+  background: url(@lightTabsBg);
+  border-bottom: 1px solid #fff;
+  div {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #adadad;
+    color: #373737;
+    &.tab1:after {
+      background: url(@lightTabs) no-repeat 0 -24px;
+      background : #b3b4b3\9; 
+    }
+    &.tab1.active:after {
+      background: url(@lightTabs) no-repeat 0 0;
+      background : #595959\9; 
+    }
+    &.tab2 {
+      &:after {
+        background: url(@lightTabs) no-repeat 0 -24px;
+        background : #b3b4b3\9; 
+      }
+      &.active:before {
+        background: url(@lightTabs) no-repeat 0 -48px;
+        background : #595959\9; 
+      }
+      &.active:after {
+        background: url(@lightTabs) no-repeat 0 0;
+        background : #595959\9; 
+      }
+    }
+    &.tab3.active {
+      &:before {
+        background: url(@lightTabs) no-repeat 0 -48px;
+        background : #595959\9; 
+      }
+    }
+    &.active {
+      .vertical-gradient(#808080, #5e5e5e);
+      border-top: 1px solid #595959;
+      border-bottom: 1px solid #595959;
+      color: #fff;
+    }
+    &.disable {
+      color: #999;
+    }
+  }
+}
+
+// Image
+.nvcwidget-image {
+  .image {
+    img {
+      border-bottom:1px solid #000;
+      .box-shadow(1px 1px 3px rgba(0,0,0,0.5))
+    }
+  }
+  .name {}
+  .desc {
+    color: #5a5a5a;
+  }
+  .default-price {
+    color: #888888;
+  }
+
+}
+
+// Options
+.nvcwidget-options {
+  .name {
+    color: #999999;
+  }
+  .option {
+    border: 1px solid #aaa;
+    .box-shadow(0px 1px 2px rgba(0,0,0,0.2));
+    .head {
+      .vertical-gradient(#fdfdfd, #dedede);
+    }
+    .foot {
+      background: #fff;
+      border-top: 1px solid #e9e9e9;
+    }
+    .price {
+      color: #666;
+    }
+    .pic {
+      .box-shadow(0px 0px 3px rgba(0,0,0,0.5));
+      &.default {
+        background: url(@optionImgDefault) repeat-x 0 0;
+      }
+      i {
+        background-image: url(@optionColorsCheck);
+      }
+    }
+    .option-wrap {
+      background: #fff;
+      border: 1px solid #aaa;
+      border-top: 1px solid #dcdcdc;
+      .box-shadow(0px 1px 2px rgba(0,0,0,0.2));
+      .list {
+        max-height: 147px;
+        overflow-y: auto;
+        label {
+          &.active {
+            background-color: #e0edcb;
+          }
+          &:hover {
+            background-color: #E5E5E5;
+          }
+        }
+      }
+      .mask {
+        background: #ccc;
+      }
+      .disabled {
+        color: #aaa;
+        .price {
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
+.nvcwidget-list-options {
+  .remove:hover,
+  .remove {
+    background: url(@removeOptionIcon) no-repeat 12px 8px;
+  }
+  tbody .option-item:hover td {
+    background: url(@backgroundItemHover);
+  }
+  tfoot td {
+    border-top: 1px solid #D6D5D3;
+  }
+  .price {
+    span {
+      color: #329900;
+    }
+  }
+}
+
+// Dealer List
+.nvcwidget-list-dealer {
+  .item {
+    border-bottom: 1px solid #D6D5D3;
+    &:last-child { border: 0;}
+    &:hover {
+      background: url(@backgroundItemHover);
+    }
+  }
+  .map {
+    span {
+      color: #666;
+    }
+    a {
+      background: url(@mapIcon) no-repeat 0 0;
+    }
+  }
+  .rating {
+    background-image: url(@ratingIcon);
+  }
+}
+
+.nvcwidget-inner-zip {
+  .name,
+  .state,
+  .tab2-zip label {
+    color: #777;
+  }
+}
+
+//
+.nvcwidget-body-bottom {
+  .top {
+    span {
+      color: #202020;
+      background: url(@lightIcons) no-repeat 0 2px;
+    }
+  }
+  .bottom {
+    color: #646464;
+    a {
+      color: #646464;
+      border-bottom: 1px dotted #646464;
+    }
+  }
+}
+
+//
+.nvcwidget-body-foot {
+  border-top: 1px solid #d6d5d3;
+  a {
+    color: #202020;
+  }
+  .email {
+    background: url(@lightIcons) no-repeat 0 -18px;
+  }
+  .print {
+    background: url(@lightIcons) no-repeat 0 -43px;
+  }
+}
+
+.nvcwidget-top-footer {
+  .rule {
+    color: #777;
+  }
+}
+
+// Navigation bottom
+.nvcwidget-nav-bottom {
+  .msg-error {
+    color: red;
+  }
+}
+
+.nvcwidget-inner-header {
+  border-bottom: 1px solid #dbdbdb;
+}
+.nvcwidget-top-footer,
+.nvcwidget-options-outer {
+  border-top: 1px solid white;
+}
+
+.nvcwidget-body {
+  .box-shadow(inset 0 -9px 10px -13px #555);
+}
+.bottom-shadow {
+  background: url(@shadow) repeat-x 0 100%;
+}
+.nvcwidget-header {
+  .box-shadow(inset 0 -7px 7px -9px #555);
+}
+.nvcwidget .shadow-top {
+  .box-shadow(inset 0 9px 10px -13px #555);
+}

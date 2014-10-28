@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Vehicle Configurator</title>
+    <script src="/js/edm/edmunds-sdk.min.js"></script>
+    <script src="/js/carconfig/carconfig.min.js"></script>
+    <link rel="stylesheet" href="/css/carconfig/simple-light.css">
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="nvcwidget"></div>
+
+<script>
+var widget = new EDM.NVC('<%= vehicleApiKey %>', '<%= dealerApiKey %>', {root: 'nvcwidget', baseClass: 'nvcwidget'});
+widget.init(<%- widgetOptions %>);
+widget.render();
+</script>
+
+</body>
+</html>

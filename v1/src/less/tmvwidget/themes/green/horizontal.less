@@ -1,0 +1,44 @@
+// Widget
+.tmvwidget {
+  width: @widthHorizontal - 2 * @borderWidth;
+}
+
+// Body
+.tmvwidget-body {
+  float: left;
+  padding-right: 0;
+  padding-bottom: 0;
+  width: @widthHorizontal - @widthPriceHorizontal - 2 * @innerHorizontalGutter - 4;
+
+  button,
+  .tmvwidget-make,
+  .tmvwidget-model,
+  .tmvwidget-style {
+    float: left;
+    margin-right: 15px;
+    width: (@widthHorizontal - @widthPriceHorizontal)/2 - 58 - 4;
+  }
+  input[type="text"] {
+    margin-right: 15px;
+  }
+
+  button {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+// Price
+.tmvwidget-price {
+  float: right;
+  width: @widthPriceHorizontal + 1;
+  margin-left:0;
+  margin-top: 15px; 
+}
+
+// Footer
+.tmvwidget-footer {
+  clear: both;
+}

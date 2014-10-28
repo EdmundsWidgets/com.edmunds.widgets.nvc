@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/smoothness/jquery-ui-1.10.1.custom.min.css">
+</head>
+<body>
+
+<div id="main" class="container">
+    <div class="row">
+        <div class="span12">
+            <!-- <ul class="nav nav-pills pull-right">
+                <li><a href="/docs" target="_blank">View API Documentation</a></li>
+            </ul> -->
+            <ul class="nav nav-pills">
+                <li><a href="/carconfig/v1">Widget</a></li>
+                <li class="active"><a href="/carconfig/v1/about">Quick Start</a></li>
+            </ul>
+        </div>
+    </div><!--./row -->
+    <div class="row">
+
+        <h2>New Vehicle Configurator Widget Quick Start</h2>
+        <hr class="bs-docs-separator">
+        <ul>
+            <li><a href="#Get_Widget_Code">Get Widget Code</a></li>
+            <li><a href="#How_to_Embed_Widget">How to Embed Widget</a></li>
+            <li><a href="#Widget_Custom_Events">Widget Custom Events</a></li>
+            <li><a href="#Events_List">Events List</a></li>
+        </ul>
+
+        <hr class="bs-docs-separator">
+
+        <h3><a name="Get_Widget_Code"></a>Get Widget Code</h3>
+        <p>To get started, just use the configurator to get code to add to your site.</p>
+        <h4>Settings:</h4>
+        <ul>
+            <li><p><code>Vehicle API Key</code> - the Key for Vehicle API registered on <a href="http://developer.edmunds.com" target="_blank">Edmunds Developer Portal</a>.</p></li>
+            <li><p><code>Dealer API Key</code> - the Key for Dealer API registered on <a href="http://developer.edmunds.com" target="_blank">Edmunds Developer Portal</a>.</p></li>
+            <!-- <li><p><code>Theme</code> - the theme for the Widget. Options: 'Theme 1', 'Theme 2', 'Theme 3'.</p></li> -->
+            <!-- <li><p><code>Color Scheme</code> - the color scheme for the Widget. Options: 'Light', 'Dark'.</p></li> -->
+            <!-- <li><p><code>Layout</code> - sets the layout of the Widget.  Options: 'Vertical', 'Horizontal'.</p></li> -->
+            <li><p><code>Width</code> - sets the width of the Widget.</p></li>
+            <li><p><code>Include Border</code> - include/exclude border in the Widget.</p></li>
+            <li><p><code>Border Radius</code> - sets the size of the Border Radius.</p></li>
+            <li><p><code>Included Makes</code> - the set of Makes to display in Makes dropdown.</p></li>
+            <!-- <li><p><code>Show vehicles</code> - specifies what types of vehicles to display on widget. Options: 'ALL' - both new and used cars, 'NEW' - only new cars, 'USED' - only used cars.</p></li> -->
+            <li><p><code>Default Zip Code</code> - the zip code to display by default in ZIP field.</p></li>
+            <li><p><code>Dealer Keywords</code> - keywords by which we filter the list of dealers to show only the ones whose title matches one of the keywords.</p></li>
+            <!-- <li><p><code>Price to display</code> - the set of prices to display. Depends from <code>Show vehicles</code>.</p>
+                <ul>
+                    <li><p><code>ALL</code> or <code>NEW</code> - Options: 'Invoice, TMV and MSRP', 'Invoice and TMV', 'TMV only'.</p></li>
+                    <li><p><code>USED</code> - Options: 'TradeIn, PrivateParty and Dealer Retail', 'TradeIn and Dealer Retail', 'Dealer Retail only'.</p></li>
+                </ul>
+            </li> -->
+            <li><p><code>Get Code</code> - instructions to embed New Vehicle Configurator Widget on your page.</p></li>
+        </ul>
+
+        <hr class="bs-docs-separator">
+
+        <h3><a name="How_to_Embed_Widget"></a>How to Embed Widget</h3>
+        <p>To embed New Vehicle Configurator Widget on your page just follow the instructions from <code>Get Code</code> popup.</p>
+        <h4>Example scenario:</h4>
+        <ol>
+            <li>
+                <p>Insert the empty div to your page:</p>
+                <pre>&lt;div id="nvcwidget"&gt;&lt;/div&gt;</pre>
+            </li>
+            <li>
+                <p>Add the following JavaScript snippet to your page:</p>
+                <pre>
+&lt;script type="text/javascript" src="http://widgets.edmunds.com/loader.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+(function(){
+var widget = EDM.createWidget({
+    "type": "nvc",
+    "renderTo": "nvcwidget",
+    "style": {
+        "width": 250,
+        "height": 890,
+        "theme": "simple",
+        "color": "light",
+        "border": "1px",
+        "borderRadius": "5px"
+    },
+    "options": {
+        "apiKey": "axr2rtmnj63qsth3ume3tv5f",
+        "includedMakes": "bmw",
+        "dealerKeywords": "",
+        "zipCode": "10001",
+        "tabs": {
+            "tab1": "Configure",
+            "tab2": "TMV®",
+            "tab3": "Price Quotes"
+        }
+    }
+});
+}());
+&lt;/script&gt;
+                </pre>
+            </li>
+        </ol>
+
+        <hr class="bs-docs-separator">
+
+        <h3><a name="Widget_Custom_Events"></a>Widget Custom Events</h3>
+        <p>New Vehicle Configurator Widget provides the next method for subscription to the widget events:</p>
+        <br>
+        <p><code>on()</code> - Binds a callback function to the widget object. The callback will be invoked whenever the event is fired. <!-- (<a href="/docs/classes/EDM.Observable.html#method_on" target="_blank">More details</a>) --></p>
+        <pre>
+(function(){
+
+    // create instance of the widget
+    var widget = EDM.createWidget(/* configured options here */);
+
+    // subscribe to the event
+    widget.on('vehicle.make.select', function(makeId, makeName) {
+        console.log(makeName + ' was selected.');
+    });
+
+}());</pre>
+        <p><code>event_name</code> - this is one event of the widget. All list of <a href="#Events_List">events</a> is below.</p>
+
+        <div class="alert alert-info">
+            <p>This method is very useful if you would use Google Analytics or another tracking system for the widget. For example:</p>
+            <pre>
+// subscribe to the event
+widget.on('vehicle.make.select', function(makeId, makeName) {
+    _gaq.push(['_trackEvent', 'Edmunds NVC Widget', 'Select a Make', makeName]);
+});
+            </pre>
+            <p>Where <code>_gaq</code> is an instance of Google Analytics in your page.</p>
+        </div>
+
+        <hr class="bs-docs-separator">
+        <h3><a name="Events_List"></a>Events List</h3>
+
+        <table class="table table-condensed table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th width="30%">Event</th>
+                    <th>Callback Params</th>
+                    <th width="50%">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>vehicle.make.select</td>
+                    <td><span class="label">makeId</span>&nbsp;<span class="label">makeName</span></td>
+                    <td>This event is fired when vehicle make is selected.</td>
+                </tr>
+                <tr>
+                    <td>vehicle.model.select</td>
+                    <td><span class="label">modelId</span>&nbsp;<span class="label">modelName</span></td>
+                    <td>This event is fired when vehicle model is selected.</td>
+                </tr>
+                <tr>
+                    <td>vehicle.year.select</td>
+                    <td><span class="label">yearId</span>&nbsp;<span class="label">yearName</span></td>
+                    <td>This event is fired when vehicle year is selected.</td>
+                </tr>
+                <tr>
+                    <td>vehicle.style.select</td>
+                    <td><span class="label">styleId</span>&nbsp;<span class="label">styleName</span></td>
+                    <td>This event is fired when vehicle style is selected.</td>
+                </tr>
+                <tr>
+                    <td>vehicle.feature.select</td>
+                    <td><span class="label">featureId</span></td>
+                    <td>This event is fired when vehicle feature is selected.</td>
+                </tr>
+                <tr>
+                    <td>vehicle.feature.deselect</td>
+                    <td><span class="label">featureId</span></td>
+                    <td>This event is fired when vehicle feature is unselected.</td>
+                </tr>
+                <tr>
+                    <td>dealer.select</td>
+                    <td><span class="label">dealerId</span></td>
+                    <td>This event is fired when dealer is selected.</td>
+                </tr>
+                <tr>
+                    <td>dealer.deselect</td>
+                    <td><span class="label">dealerId</span></td>
+                    <td>This event is fired when dealer is unselected.</td>
+                </tr>
+                <tr>
+                    <td>zip.update</td>
+                    <td><span class="label">zipCode</span></td>
+                    <td>This event is fired when zip on the first tab is changed.</td>
+                </tr>
+                <tr>
+                    <td>ziplocation.update</td>
+                    <td><span class="label">zipCode</span></td>
+                    <td>This event is fired when zip on the second tab is changed.</td>
+                </tr>
+                <tr>
+                    <td>zipmi.update</td>
+                    <td><span class="label">zipCode</span>&nbsp;<span class="label">radius</span></td>
+                    <td>This event is fired when zip on the third tab is changed.</td>
+                </tr>
+                <tr>
+                    <td>successdialogbtn.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when button in the success dialog is clicked.</td>
+                </tr>
+                <tr>
+                    <td>tab1.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when first tab is clicked.</td>
+                </tr>
+                <tr>
+                    <td>tab2.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when second tab is clicked.</td>
+                </tr>
+                <tr>
+                    <td>tab3.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when third tab is clicked.</td>
+                </tr>
+                <tr>
+                    <td>nextbtn1.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when next button on the first tab is clicked.</td>
+                </tr>
+                <tr>
+                    <td>nextbtn2.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when next button on the second tab is clicked.</td>
+                </tr>
+                <tr>
+                    <td>submitbtn.click</td>
+                    <td>Has no params</td>
+                    <td>This event is fired when submit button on the third tab is clicked.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div><!--./row -->
+</div><!--./container -->
+
+<script src="/js/libs/jquery.js"></script>
+<script src="/js/libs/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="/js/plugins/bootstrap-button.js"></script>
+<script src="/js/plugins/bootstrap-tooltip.js"></script>
+<script src="/js/plugins/bootstrap-modal.js"></script>
+<script src="/js/plugins/bootstrap-tab.js"></script>
+<script>
+    $('.tabbable a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+</script>
+
+</body>
+</html>

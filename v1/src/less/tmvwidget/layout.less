@@ -1,0 +1,247 @@
+// Widget
+.tmvwidget {
+  .border-radius(@borderRadius);
+  width: @width - 2 * @borderWidth;
+  font: 11px/20px @fontFamily;
+  position: relative;
+
+  // Copyright text
+  .logo,
+  .copy {
+    font: italic bold 11px/18px @fontFamily;
+  }
+  .copy {
+    font-style: normal;
+  }
+
+  // Edmunds logotype
+  .logo {
+    display: block;
+    height: 19px;
+    text-decoration: none;
+    color: #888;
+    font-weight:normal;
+    a {
+      display: inline-block;
+      background: 100% 0 no-repeat;
+      height: 19px;
+      padding-right: 70px;
+      margin-bottom: -6px;
+    }
+  }
+
+  // Title text
+  .title {
+    font: bold 11px/20px @fontFamily;
+    text-transform: uppercase;
+
+    sup { font-size: 100%; }
+
+  }
+
+// Tooltip
+  .tmvwidget-tooltip {
+    display: none;
+    position: absolute;
+    right: -183px;
+    width: 150px;
+    top: -10px;
+    z-index: 1030;
+    font-size: 11px;
+    color: #666;
+    border: 1px solid #c8c9ca;
+    line-height: 16px;
+    text-align: left;
+    font-weight: normal;
+    padding: 10px;
+    white-space: normal;
+    background-color: #fff;
+  -webkit-box-shadow: 3px 3px 0px rgba(50, 50, 50, 0.5);
+     -moz-box-shadow: 3px 3px 0px rgba(50, 50, 50, 0.5);
+          box-shadow: 3px 3px 0px rgba(50, 50, 50, 0.5);
+          text-shadow: none;
+
+    .arrow-left {
+      position: absolute;
+      left: -7px;
+      top: 10px;
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 6.5px 7px 6.5px 0;
+      border-color: transparent #fff transparent transparent;
+    }
+
+  }
+  sub, sup {
+    top: -0.5em;
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+
+}
+
+// Header
+.tmvwidget-header {
+  .border-top-radius(@borderRadius - @borderWidth);
+  height: 20px;
+  line-height: 20px;
+
+  .title {
+    float: left;
+  }
+
+  .logo {
+    float: right;
+  }
+
+  .question {
+    float: right;
+    color: #345d86;
+    cursor: pointer;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+    sup {
+      text-indent: -9999px;
+      overflow: hidden;
+      display: block;
+    }
+    .tmvwidget-tooltip {
+      left: -183px;
+      right: auto;
+      .box-shadow(-3px 3px 0px rgba(50, 50, 50, 0.5));
+      .arrow-left {
+        right: -7px;
+        left: auto;
+        top: 10px;
+        border-width: 6.5px 0px 6.5px 7px;
+        border-color: transparent transparent transparent #fff;
+      }
+    }
+    &:hover {
+      cursor:pointer;
+      .tmvwidget-tooltip {
+        display:block;
+      }
+    }
+  }
+
+}
+
+// Body
+.tmvwidget-body {
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  input[type="text"],
+  select {
+    border: 1px solid #aaa;
+    .border-radius(0);
+    color: #373737;
+    font: 11px @fontFamily;
+    margin: 0;
+    padding: 0;
+
+    &[disabled] {
+      color: #999;
+    }
+  }
+
+  input[type="text"] {
+    height: 22px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  select {
+    height: 24px;
+    line-height: 18px;
+    margin: 5px 0;
+    padding: 1px;
+  }
+
+  > * {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+}
+
+@-moz-document url-prefix() {
+  .tmvwidget-body select {
+    line-height: 18px;
+    padding: 3px;
+  }
+}
+
+.tmvwidget-row,
+.tmvwidget-price {
+  border-collapse: collapse;
+}
+
+
+.tmvwidget-make,
+.tmvwidget-model,
+.tmvwidget-style {
+  width: 100%;
+}
+
+.tmvwidget-year {
+  width: 60px;
+  float: none;
+  min-width: 60px;
+}
+
+.tmvwidget-zip {
+  float: left;
+  margin-right: 10px;
+  width: 58px;
+}
+.zip-code {
+  position: relative;
+  float: left;
+  .tmvwidget-tooltip {
+    left: 70px;
+  }
+}
+
+
+// Footer
+.tmvwidget-footer {
+  .border-bottom-radius(@borderRadius - @borderWidth);
+  line-height: 20px;
+
+  .copy {
+    float: left;
+  }
+
+  .logo {
+    float: right;
+  }
+
+}
+
+.tmvwidget-header,
+.tmvwidget-footer {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.tmvwidget-header,
+.tmvwidget-body,
+.tmvwidget-footer {
+  padding-left: @innerHorizontalGutter;
+  padding-right: @innerHorizontalGutter;
+}
+
+// Clearfixes
+.tmvwidget-inner > *,
+.tmvwidget-row {
+  .clearfix();
+}
+
+@import "alert.less";

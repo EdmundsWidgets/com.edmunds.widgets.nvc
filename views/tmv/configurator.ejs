@@ -1,0 +1,154 @@
+<form action="/download" method="post" id="widget-configurator" class="well well-small">
+    <fieldset>
+        <legend>Get TMV<sup>&reg;</sup> Widget Code</legend>
+
+        <!-- vehicle api key -->
+        <div class="control-group">
+            <div class="control-label">
+                Vehicle API Key
+                (<a href="http://edmunds.mashery.com/member/my-account" target="_blank">get yours</a>)
+                <div class="question"><i class="icon-question-sign"></i>
+                    <div class="tooltip right tooltip-question">
+                        <div class="tooltip-arrow" style=""></div>
+                        <div class="tooltip-inner">The Vehicle API Key listed at <a href="http://edmunds.mashery.com/member/my-account" target="_blank">http://edmunds.mashery.com/member/my-account</a></div>
+                    </div>
+                </div>
+                <sup class="label label-important label-required">required</sup>
+            </div>
+            <div class="controls">
+                <div class="control-apikey" id="vehicleApiKeyControl">
+                    <div class="input-append apikey-change">
+                        <input type="text">
+                        <button class="btn disabled" type="button" data-action="apply">Apply</button>
+                    </div>
+                    <div class="apikey-entered hide">
+                        <button class="btn btn-link" type="button" data-action="change">Change</button>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div><!--/vehicle api key -->
+
+        <div class="control-group">
+            <div class="control-label">Theme</div>
+            <div class="controls" id="option_theme">
+                <div class="btn-group" data-toggle="buttons-radio">
+                    <button type="button" class="btn btn-small" data-value="simple">Theme 1</button>
+                    <button type="button" class="btn btn-small" data-value="green">Theme 2</button>
+                    <button type="button" class="btn btn-small" data-value="red">Theme 3</button>
+                </div>
+                <input type="hidden" name="widgetOptions[hasLogoInHeader]" value="true">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Color Scheme</div>
+            <div class="controls" id="option_colorscheme">
+                <div class="btn-group" data-toggle="buttons-radio">
+                    <button type="button" class="btn btn-small" data-value="light">Light</button>
+                    <button type="button" class="btn btn-small" data-value="dark">Dark</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Layout</div>
+            <div class="controls" id="option_layout">
+                <div class="btn-group" data-toggle="buttons-radio">
+                    <button type="button" class="btn btn-small active" data-value="vertical">Vertical</button>
+                    <button type="button" class="btn btn-small" data-value="horizontal">Horizontal</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Width</div>
+            <div class="controls slider-control">
+                <div id="widget-width-slider"></div>
+                <input id="widget-width-value" type="hidden" name="variables[horizontalWidth]" value="680px">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <label class="checkbox">
+                    <input type="checkbox" id="option_border" checked="checked">
+                    Include Border
+                </label>
+                <input type="hidden" name="variables[borderWidth]" value="1px">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Border Radius</div>
+            <div class="controls slider-control">
+                <div id="border-radius-slider"></div>
+                <input id="border-radius-value" type="hidden" name="variables[borderRadius]" value="5px">
+            </div>
+        </div>
+
+        <div class="control-group hide">
+            <div class="control-label">Edmunds copy</div>
+            <div class="controls">
+                <select id="copy" name="widgetOptions[copy]" disabled="disabled">
+                    <option value="logo_text">Logo and text</option>
+                    <option value="logo">Edmunds logo</option>
+                    <option value="text">Text message</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="control-group" id="option_makes">
+            <label class="checkbox btn btn-small pull-right">
+                <input type="checkbox" id="selectAllMakes">
+                Select&nbsp;All
+            </label>
+            <div class="control-label clearfix">
+                <span class="pull-left">Included Makes</span>
+            </div>
+            <div class="controls clearfix">
+                <div id="includedMakes"></div>
+                <input type="hidden" name="widgetOptions[includedMakes]" value="">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Show vehicles</div>
+            <div class="controls" id="option_vehicles">
+                <div class="btn-group" data-toggle="buttons-radio">
+                    <button type="button" class="btn btn-small active" data-value="ALL">All</button>
+                    <button type="button" class="btn btn-small" data-value="NEW">NEW</button>
+                    <button type="button" class="btn btn-small" data-value="USED">USED</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Default Zip Code</div>
+            <div class="controls">
+                <div class="input">
+                    <input type="text" autocomplete="off" name="widgetOptions[zip]" value="" id="option_zipcode" class="input-small" maxlength="5" disabled="disabled">
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <div class="control-label">Price to display</div>
+            <div class="controls">
+                <select id="option_price" name="widgetOptions[price]">
+                    <option value="tmv_invoice_msrp" data-used-text="TradeIn, PrivateParty and Dealer Retail" data-new-text="Invoice, TMV and MSRP">Invoice, TMV and MSRP</option>
+                    <option value="tmv_invoice" data-used-text="TradeIn and Dealer Retail" data-new-text="Invoice and TMV">Invoice and TMV</option>
+                    <option value="tmv" data-used-text="Dealer Retail only" data-new-text="TMV only">TMV only</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="widget-get"><i class="icon-white icon-download"></i>&nbsp;Get Code</button>
+            <button type="reset" class="btn btn-link">Reset</button>
+        </div>
+
+        <input type="hidden" name="variables[widthHorizontals]" value="680px">
+
+    </fieldset>
+</form><!--./widget-configurator -->

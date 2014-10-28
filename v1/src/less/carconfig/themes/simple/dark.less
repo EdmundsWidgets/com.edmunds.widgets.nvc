@@ -1,0 +1,343 @@
+.nvcwidget {
+  background: #3f3f3f;
+  border: @borderWidth solid #515151;
+  color: white;
+
+  .copy {
+    color: #838383;
+  }
+
+  .title {
+    color: white;
+  }
+
+  .logo{
+    color: #888;
+    a{
+      background: url(@edmWhiteLogo) 100% 0 no-repeat;
+    }
+  }
+  .noise-bg {
+    background: url(@noiseDark);
+  }
+  input[type="text"],
+  select {
+    border: 1px solid black;
+    color: #373737;
+    &[disabled] {
+      color: #999;
+    }
+  }
+  .form {
+    span span {
+      color: #cb5960;
+    }
+    label {
+      color: #aaa;
+    }
+    .nvcwidget-tooltip {
+      background-color: #C1373E;
+      span {
+        color: white;
+      }
+      .arrow-left {
+        border-color: #C1373E transparent transparent transparent;
+      }
+    }
+    .invalid {
+      input[type="text"]{
+        border-color: #C1373E;
+        &:focus {
+          .box-shadow(0 0 8px rgba(238,95,91,.6));
+        }
+      }
+    }
+  }
+}
+
+.nvcwidget-overlay {
+  background: rgba(255,255,255,0.5);
+}
+.failure-message {
+  background: #BE3037;
+  border: 1px solid #A32C31;
+  .message-header {
+    background: url(@failureMessageIcon) 0 0 no-repeat;
+  }
+}
+.success-message {
+  .message-header {
+    background: url(@successMessageIcon) 0 0 no-repeat;
+  }
+}
+
+.nvcwidget-header {
+  .question {
+    background: url(@questionSignDark) no-repeat 0 0;
+  }
+}
+
+.nvcwidget-footer {
+  border-top: 1px dotted #ccc;
+}
+
+// Tabs
+.nvcwidget-tabs {
+  background: url(@darkTabsBg);
+  border-bottom: 1px solid #515151;
+  div {
+    border-top: 1px solid #525252;
+    border-bottom: 1px solid black;
+    color: white;
+    &.tab1:after {
+      background: url(@darkTabs) no-repeat 0 -24px;
+      background : #3c3940\9;
+    }
+    &.tab1.active:after {
+      background: url(@darkTabs) no-repeat 0 0;
+      background : #3c3940\9;
+    }
+    &.tab2 {
+      &:after {
+        background: url(@darkTabs) no-repeat 0 -24px;
+        background : #3c3940\9;
+      }
+      &.active:before {
+        background: url(@darkTabs) no-repeat 0 -48px;
+        background : #3c3940\9;
+      }
+      &.active:after {
+        background: url(@darkTabs) no-repeat 0 0;
+        background : #3c3940\9;
+      }
+    }
+    &.tab3.active {
+      &:before {
+        background: url(@darkTabs) no-repeat 0 -48px;
+        background : #3c3940\9;
+      }
+    }
+    &.active {
+      .vertical-gradient(#b6b5b6, #b2b2b2);
+      border-top: 1px solid #b6b5b6;
+      border-bottom: 1px solid black;
+      color: black;
+    }
+    &.disable {
+      color: #999;
+    }
+  }
+}
+
+// Image
+.nvcwidget-image {
+  .image {
+    img {
+      border-bottom:1px solid #000;
+      .box-shadow(1px 1px 3px rgba(0,0,0,0.5))
+    }
+  }
+  .name {
+    color: #d83237;
+  }
+  .default-price {
+    color: #888888;
+  }
+
+}
+
+// Options
+.nvcwidget-options {
+  .name {
+    color: #999999;
+  }
+  .option {
+    border: 1px solid #232323;
+    .box-shadow(0px 1px 2px rgba(0,0,0,0.2));
+    .head {
+      .vertical-gradient(#999895, #81817f);
+    }
+    .foot {
+      background: #c5c5c5;
+      border-top: 1px solid #aaa;
+    }
+    .price {
+      color: white;
+    }
+    .pic {
+      .box-shadow(0px 0px 3px rgba(0,0,0,0.5));
+      &.default {
+        background: url(@optionImgDefault) repeat-x 0 0;
+      }
+      i {
+        background-image: url(@optionColorsCheck);
+      }
+    }
+    .option-wrap {
+      background: white;
+      border: 1px solid #232323;
+      border-top: 1px solid #666;
+      .box-shadow(0px 1px 2px rgba(0,0,0,0.4));
+      .list {
+        max-height: 147px;
+        overflow-y: auto;
+        color: #373737;
+        .price {
+          color: #666;
+        }
+        label {
+          &.active {
+            background-color: #b6cb96;
+          }
+          &:hover {
+            background-color: #c3c3c3;
+          }
+        }
+      }
+      .mask {
+        background: #ccc;
+      }
+      .disabled {
+        color: #aaa;
+        .price {
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
+.nvcwidget-list-options {
+  .remove:hover,
+  .remove {
+    background: url(@removeOptionIconDark) no-repeat 12px 8px;
+  }
+  tbody .option-item:hover td {
+    background: url(@backgroundItemHoverDark);
+  }
+  tfoot td {
+    border-top: 1px solid #7a7a7a;
+  }
+  .price {
+    span {
+      color: #329900;
+    }
+  }
+}
+
+// Dealer List
+.nvcwidget-list-dealer {
+  .item {
+    border-bottom: 1px solid #7a7a7a;
+    &:last-child { border: 0;}
+    &:hover {
+      background: url(@backgroundItemHoverDark);
+    }
+  }
+  a {
+    color: #99ccff;
+  }
+  .map {
+    span {
+      color: white;
+    }
+    a {
+      background: url(@mapIconDark) no-repeat 0 0;
+    }
+  }
+  .rating {
+    background-image: url(@ratingIcon);
+  }
+}
+
+//
+.nvcwidget-body-bottom {
+  .top {
+    span {
+      color: #202020;
+      background: url(@darkIcons) no-repeat 0 2px;
+    }
+  }
+  .bottom {
+    color: #646464;
+    a {
+      color: #646464;
+      border-bottom: 1px dotted #646464;
+    }
+  }
+}
+
+//
+.nvcwidget-body-foot {
+  border-top: 1px solid #d6d5d3;
+  a {
+    color: #202020;
+  }
+  .email {
+    background: url(@darkIcons) no-repeat 0 -18px;
+  }
+  .print {
+    background: url(@darkIcons) no-repeat 0 -43px;
+  }
+}
+
+.nvcwidget-top-footer {
+  .rule {
+    color: white;
+  }
+}
+
+// Navigation bottom
+.nvcwidget-nav-bottom {
+  .msg-error {
+    color: red;
+  }
+}
+
+.nvcwidget-inner-header {
+  border-bottom: 1px solid #3f3f3f;
+}
+.nvcwidget-top-footer,
+.nvcwidget-options-outer {
+  border-top: 1px solid #444444;
+}
+
+.nvcwidget-body {
+  .box-shadow(inset 0 -9px 10px -13px #000);
+}
+.bottom-shadow {
+  background: url(@shadow) repeat-x 0 100%;
+}
+.nvcwidget-header {
+  .box-shadow(inset 0 -7px 7px -9px #000);
+}
+.nvcwidget .shadow-top {
+  .box-shadow(inset 0 9px 10px -13px #000);
+}
+
+.nvcwidget {
+  button {
+
+    &.button-light {
+      .buttonBackground(#9a9996, #848381, black, white);
+
+      &:active, &:hover {
+        .buttonBackground(@buttonDefaultStartColor,
+                  @buttonDefaultEndColor,
+                  @buttonDefaultBorderColor,
+                  @buttonDefaultTextColor);
+      }
+
+    }
+  }
+}
+// Disabled state
+.nvcwidget button[disabled],
+.nvcwidget button[disabled].button-yellow,
+.nvcwidget button[disabled].button-green,
+.nvcwidget button[disabled].button-light {
+  cursor: default;
+  .buttonBackground(@buttonDisabledStartColor,
+                @buttonDisabledEndColor,
+                @buttonDisabledBorderColor,
+                @buttonDisabledTextColor);
+}

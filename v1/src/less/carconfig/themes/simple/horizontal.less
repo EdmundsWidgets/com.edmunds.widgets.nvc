@@ -1,0 +1,48 @@
+// Widget
+.nvcwidget {
+  width: @widthHorizontal - 2 * @borderWidth;
+}
+
+// Body
+.nvcwidget-body {
+  float: left;
+  padding-right: 0;
+  padding-bottom: 0;
+  width: @widthHorizontal - @widthPriceHorizontal - 3 * @innerHorizontalGutter - 4;
+
+  button,
+  .nvcwidget-make,
+  .nvcwidget-model,
+  .nvcwidget-style {
+    float: left;
+    margin-right: 15px;
+    width: (@widthHorizontal - @widthPriceHorizontal - @innerHorizontalGutter)/2 - 58 - 4;
+  }
+  input[type="text"] {
+    margin-right: 15px;
+  }
+
+  button {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+  }
+
+}
+
+// Price
+.nvcwidget-price {
+  float: right;
+  width: @widthPriceHorizontal + 1;
+  margin-left:0;
+  margin-top: 15px;
+
+  .nvcwidget-price-no-graph {
+    padding: 0 10px;
+  }
+}
+
+// Footer
+.nvcwidget-footer {
+  clear: both;
+}

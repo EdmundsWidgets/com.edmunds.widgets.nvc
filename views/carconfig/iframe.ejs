@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Vehicle Configurator</title>
+    <link rel="stylesheet" href="<%- themeCssUrl %>">
+    <link rel="stylesheet" href="<%- additionalCssUrl %>">
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+    <% if (debug) { %>
+    <script src="/js/libs/jquery/jquery.js"></script>
+    <script src="/js/libs/underscore/underscore.js"></script>
+    <script src="/js/libs/backbone/backbone.js"></script>
+    <script src="/js/edm/edmunds-sdk.js"></script>
+    <script src="/js/carconfig/carconfig.js"></script>
+    <% } else { %>
+    <script src="/js/libs/jquery/jquery.min.js"></script>
+    <script src="/js/libs/underscore/underscore-min.js"></script>
+    <script src="/js/libs/backbone/backbone-min.js"></script>
+    <script src="/js/edm/edmunds-sdk.min.js"></script>
+    <script src="/js/carconfig/carconfig.min.js"></script>
+    <% } %>
+</head>
+<body>
+
+<div id="nvcwidget"></div>
+
+<script>
+var widget = new EDM.NVC('<%= vehicleApiKey %>', '<%= dealerApiKey %>', {root: 'nvcwidget', baseClass: 'nvcwidget'});
+widget.init(<%- widgetOptions %>);
+widget.render();
+
+// Add Google Analytics
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+// track events
+(function() {
+    function _trackEvent(category, action, label) {
+        _gaq.push(['_trackEvent', category, action, label]);
+        <% if (debug) { %>
+            console.log('Track Event: ' + [category, action, label].join(' => '));
+        <% } %>
+    }
+    window._gaq = window._gaq || [];
+    _gaq.push(['_setAccount', 'UA-24637375-3']);
+    _gaq.push(['_setDomainName', window.location.host]);
+    _gaq.push(['_trackPageview']);
+    /* common */
+    <% if (debug) { %>
+    // do not track in the debug mode
+    widget.on('render', function() {
+        _trackEvent('NVC', 'Initialize', 'New Vehicle Configurator Widget');
+    });
+    <% } %>
+    widget.on('reset', function() {
+        _trackEvent('NVC', 'Reset', 'New Vehicle Configurator Widget');
+    });
+    /* tabs */
+    widget.on('tab:show', function(el, tabName) {
+        _trackEvent('Tabs', 'Show', tabName);
+    });
+    /* buttons */
+    widget.on('getpricebtnclick', function(el, tabName) {
+        _trackEvent('Buttons', 'Click', 'Get Price');
+    });
+    widget.on('getpricequotebtnclick', function(el, tabName) {
+        _trackEvent('Buttons', 'Click', 'Get Price Quote');
+    });
+    widget.on('getdealerquotebtnclick', function(el, tabName) {
+        _trackEvent('Buttons', 'Click', 'Get Dealer Quote');
+    });
+    /* style configurator */
+    widget.styleConfigurator.makeSelect.on('change', function(value) {
+        if (value) {
+            _trackEvent('Style Configurator', 'Select Make', value);
+        }
+    });
+    widget.styleConfigurator.modelSelect.on('change', function(value) {
+        if (value) {
+            _trackEvent('Style Configurator', 'Select Model', value);
+        }
+    });
+    widget.styleConfigurator.yearSelect.on('change', function(value) {
+        if (value) {
+            _trackEvent('Style Configurator', 'Select Year', value);
+        }
+    });
+    widget.styleConfigurator.styleSelect.on('change', function(value) {
+        if (value) {
+            _trackEvent('Style Configurator', 'Select Style', value);
+        }
+    });
+    /* zip codes */
+    widget.zipUpdate.on('update', function(value) {
+        _trackEvent('ZIP', 'Change ZIP', value);
+    });
+    widget.zipLocation.on('update', function(value) {
+        _trackEvent('ZIP', 'Change ZIP', value);
+    });
+    widget.zipMiField.on('update', function(zipCode, radius) {
+        _trackEvent('ZIP', 'Change ZIP and radius', 'Zip: ' + zipCode + '; radius: ' + radius);
+    });
+    /* options: select/deselect */
+    // TODO track features selection events
+    /*
+    widget.vehicleOptions.on('select', function(featureId) {
+        _trackEvent('Vehicle Options', 'Select Option', featureId);
+    });
+    widget.vehicleOptions.on('deselect', function(featureId) {
+        _trackEvent('Vehicle Options', 'Select Option', featureId);
+    });
+    widget.optionsList.on('del-option', function(options) {
+        _trackEvent('Vehicle Options', 'Deselect Option', options.id);
+    });
+    */
+    /* dealers */
+    widget.dealers.on('choice-dealer', function(el) {
+        var label = el.checked ? 'Select Dealer' : 'Unselect Dealer';
+        _trackEvent('Dealers', label, el.value);
+    });
+    /* lead form */
+    widget.on('leadformsubmit', function(options) {
+        _trackEvent('Lead Form', 'Submit');
+    });
+}());
+</script>
+
+</body>
+</html>

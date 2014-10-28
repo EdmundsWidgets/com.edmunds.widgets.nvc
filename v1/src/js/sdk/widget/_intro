@@ -1,0 +1,4 @@
+(function(global) {
+    'use strict';
+    // define global namespace
+    var EDM = global.EDM = global.EDM || {};

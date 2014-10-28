@@ -1,0 +1,102 @@
+// features
+.nvcwidget .nvcwidget-options-outer {
+  border-bottom-color: #666;
+}
+
+.nvcwidget-options-outer .features-list .features-list-item.excluded {
+  color: white;
+}
+.nvcwidget-options-outer .features-list .features-list-item .feature-price {
+  color: white;
+}
+
+.nvcwidget-options-outer .features-list .features-list-item.selected,
+.nvcwidget-options-outer .features-list .features-list-item.selected:hover {
+  background: #bacb9e;
+  .feature-price,
+  .feature-name {
+    color: black;
+  }
+}
+
+.nvcwidget-options-outer .features-list .features-list-item:hover {
+  background: #666;
+  .feature-price,
+  .feature-name {
+    color: white;
+  }
+}
+
+.nvcwidget-options-outer .features-list .features-list-item.active,
+.nvcwidget-options-outer .features-list .features-list-item.selected.active {
+  background: #666;
+}
+
+.features-list-item,
+.features-list-item.active,
+.features-list-item:hover {
+  .feature-notification {
+    .feature-price,
+    .feature-name {
+      color: #ddd;
+    }
+  }
+}
+
+.feature-notification .feature-notification-buttons button {
+  .buttonBackground(#848381, #848381 , #222, #fff);
+  &:hover {
+    border-color: #036;
+  }
+}
+
+.nvcwidget-options .features-category-head .inner {
+  border-color: #232323;
+  .vertical-gradient(#999895, #81817f);
+}
+
+.features-category-head .features-category-price {
+  color: white;
+}
+
+.selected-features-footer {
+  border-top-color: #666;
+}
+
+.selected-features-list .features-list-item {
+  .feature-price,
+  .feature-name {
+    color: white;
+  }
+}
+
+.selected-features-list .features-list-item .icon-remove {
+  background-image: url(@removeOptionIconDark);
+}
+
+.selected-features-list .features-list-item:hover,
+.selected-features-list .features-list-item.active {
+  background: #666;
+}
+
+// incentives
+.incentives {
+  .incentive-toggle {
+    .incentive-label i {
+      background-position: 0 -16px;
+    }
+    .switcher-wrapper {
+      color: white;
+      .switcher {
+        &.on { background-position: 0 -17px; }
+        &.off { background-position: -40px -17px; }
+      }
+    }
+  }
+  .incentive-info {
+    .incentive-price,
+    .incentive-subprogram {
+      color: white;
+    }
+  }
+}

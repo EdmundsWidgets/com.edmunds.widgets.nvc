@@ -1,0 +1,5 @@
+(function(EDM) {
+    'use strict';
+    
+    // utils shortcut
+    var $ = EDM.Util;

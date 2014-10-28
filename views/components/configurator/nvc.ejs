@@ -1,0 +1,20 @@
+<form id="widget-configurator" class="well well-small well-configurator">
+	<fieldset>
+		<legend>Primary Options</legend>
+		<% include section/vehicle-api-key.ejs %>
+		<% include section/dealer-api-key.ejs %>
+		<% include section/zip-code.ejs %>
+		<% include section/makes.ejs %>
+		<% include section/tabs-to-display.ejs %>
+		<% include section/dealer-keywords.ejs %>
+	</fieldset>
+	<fieldset>
+		<legend>Appearance</legend>
+		<% include section/theme.ejs %>
+		<% include section/color-scheme.ejs %>
+		<% include section/width.ejs %>
+		<% include section/border-width.ejs %>
+		<% include section/border-radius.ejs %>
+	</fieldset>
+	<% include section/actions.ejs %>
+</form><!--./widget-configurator -->

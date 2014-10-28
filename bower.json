@@ -1,7 +1,7 @@
 {
   "name": "com.edmunds.widgets.nvc",
   "version": "0.0.1",
-  "description": "Edmunds New Vehicle Configurator Widget",
+  "description": "Edmunds Widgets NVC",
   "private": true,
   "ignore": [
     "**/.*",
@@ -9,5 +9,15 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "backbone": "1.0.0",
+    "bootstrap": "3.1.0",
+    "less": "~1.7.0",
+    "jquery": "1.11.0",
+    "jquery-ui": "1.10.3",
+    "requirejs": "2.1.10",
+    "underscore": "1.5.2",
+    "edmunds-sdk":"0.0.5"
+  }
 }

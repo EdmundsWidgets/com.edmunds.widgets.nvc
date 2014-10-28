@@ -1,0 +1,31 @@
+<script type="text/template" id="js-snippet-template">
+(function(d, tag, vehicleApikey, dealerApiKey){
+    var nvc = {
+        init: function() {
+            nvc.loadjs('{{ sdkSrc }}', nvc.loadWidget);
+        },
+        loadjs: function(file, callback) {
+            var fjs = d.getElementsByTagName(tag)[0],
+                s = d.createElement(tag);
+            s.onload = s.onreadystatechange = function() {
+                var r = this.readyState;
+                if (!r || r === 'loaded' || r === 'complete') {
+                    callback.call();
+                    s.onreadystatechange = null;
+                }
+            };
+            s.src = file;
+            fjs.parentNode.insertBefore(s, fjs);
+        },
+        loadWidget: function() {
+            nvc.loadjs('{{ widgetSrc }}', nvc.initWidget);
+        },
+        initWidget: function() {
+            var widget = new EDM.NVC(vehicleApikey, dealerApiKey, {root: 'nvcwidget', baseClass: 'nvcwidget'});
+            widget.init({{ widgetOptions }});
+            widget.render();
+        }
+    };
+    nvc.init();
+}(document, 'script', '{{ vehicleApiKey }}', '{{ dealerApiKey }}'));
+</script>

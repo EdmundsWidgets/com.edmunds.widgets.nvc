@@ -1,0 +1,19 @@
+@import "../mixins.less";
+@import "../images.less";
+@import "../variables.less";
+
+@import "red/horizontal.less";
+
+.nvcwidget {
+  .border-top-radius(@borderRadius - @borderWidth);
+  .border-bottom-radius(0);
+  border: 0;
+
+  	.nvcwidget-header {
+  		.border-top-radius(@borderRadius);
+	}
+	.nvcwidget-inner {
+  		.border-top-radius(@borderRadius);
+      	border-width: @borderWidth;
+	}
+}

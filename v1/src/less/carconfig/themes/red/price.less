@@ -1,0 +1,234 @@
+.nvcwidget-price {
+  background: 0 0 no-repeat;
+  margin-left: -18px;
+  margin-right: @innerHorizontalGutter - 2;
+
+  > div {
+    background: right -124px no-repeat;
+
+    > div {
+      background: 0 -62px repeat-x;
+      margin: 0 10px 0 20px;
+      padding: 8px 5px 8px 5px;
+    }
+
+  }
+
+  &,
+  > div,
+  > div > div {
+    /*background-image: url(@redPriceBackground);*/
+    background-image: url(@redPriceBackgroundContrast);
+    max-height: 62px;
+  }
+
+}
+
+.nvcwidget-price-no-graph,
+.nvcwidget-price-graph {
+  color: black;
+  font: bold 9px/1 @fontFamily;
+
+  .left {
+    float: left;
+    position: relative;
+    max-width: 100%;
+    max-width: 99.99%\0; // fix for IE8A
+    width: 45%;
+
+    .middle {
+      left: 100%;
+      position: absolute;
+      top: 0;
+      margin-left: -8px;
+    }
+
+  }
+
+  .left + .right {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .prices, .labels { white-space: nowrap; }
+
+  .prices {
+    color: white;
+    font-size: 10px;
+    line-height: 14px;
+
+    .middle {
+      font-size: 14px;
+      border-bottom: 0;
+    }
+
+  }
+
+  .graph {
+    padding: 9px 0 6px;
+
+    &, .left, .right, .middle {
+      height: 2px;
+    }
+
+    .left {
+      background-color: #2b7502;
+      border-bottom: 1px solid #e1494e;
+      border-top: 1px solid #225e02;
+    }
+
+    .right {
+      background-color: #fc3;
+      border-bottom: 1px solid #e1494e;
+      border-top: 1px solid #cca329;
+    }
+
+    .middle {
+      background: url(@redPricePointerSprite) 0 0 no-repeat;
+      display: block;
+      height: 12px;
+      margin-top: -3px;
+      top: -3px;
+      width: 14px;
+    }
+
+  }
+}
+
+.nvcwidget-price-no-graph {
+
+  .labels {
+
+    .label {
+      padding: 0 5px 0 0;
+      font-size: 14px;
+      line-height: 18px;
+      /*color: #420000;*/
+      color: #370a0d;
+      text-shadow: 0 1px 0 #df6568;
+      background: none;
+      &:after { content: ":"}
+    }
+
+    .value {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      display: inline-block;
+    }
+
+    .top {
+      .label { text-shadow:0px 1px 0px #D55B65; }
+      .value { text-shadow:0px -1px 0px #B82328; }
+      sup {
+        font-size: 12px;
+        margin-right: 2px;
+      }
+    }
+
+    .bottom {
+      padding-top: 5px;
+
+      .label, .value{
+        font-size: 11px;
+        display: inline-block;
+      }
+      sup {
+        color: white;
+        top: -2px;
+        margin-right: 1px;
+      }
+
+      .right {
+        overflow: inherit;
+      }
+    }
+    .value {
+      border-bottom: 1px dotted #fff;
+      color: white;
+      line-height: 100%;
+      position: relative;
+      &:hover {
+        cursor:pointer;
+        .nvcwidget-tooltip {
+          display:block;
+        }
+      }
+      &.invalid {
+        border-bottom: 0;
+        sup {
+          display: none;
+        }
+        &:hover {
+          cursor: auto;
+          .nvcwidget-tooltip {
+            display:none;
+          }
+        }
+      }
+    }
+  }
+  &.NEW .top .value {
+    border: 0;
+    &:hover {
+      cursor: auto;
+      .nvcwidget-tooltip {
+        display:none;
+      }
+    }
+  }
+}
+
+.price-tmv-invoice {
+  .bottom {
+    .left {
+      float: none;
+    }
+    .right {
+      display: none;
+    }
+  }
+}
+
+.price-tmv {
+  .labels {
+    padding: 3px;
+  }
+  .bottom {
+    display: none;
+  }
+  .top {
+    text-align: center;
+    .label {
+      display: block;
+      text-align: center;
+    }
+  }
+}
+
+
+.nvcwidget-price.disabled {
+  background-position: 0 -186px;
+  > div {
+    background-position: right -310px;
+    > div {
+      background-position: 0 -248px;
+    }
+
+  }
+
+  .nvcwidget-price-graph  {
+    .middle {
+      background-position: 0 -12px;
+    }
+  }
+  .labels {
+    .label, .value {
+      text-shadow: none;
+      color: #666;
+    }
+  }
+
+
+}

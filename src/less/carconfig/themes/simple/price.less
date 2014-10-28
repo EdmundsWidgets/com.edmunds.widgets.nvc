@@ -1,0 +1,171 @@
+.nvcwidget-price {
+  background: #e3efcf;
+  .vertical-gradient(#e3efcf, #d2e5b3);
+  border: 1px solid #8bbc3d;
+  margin: 0 @innerHorizontalGutter;
+  > div {
+    border: 1px solid white;
+  }
+}
+
+.nvcwidget-price .nvcwidget-price-graph {
+  padding: 5px;
+  .top {
+    .name {
+      font-size: 10px;
+      white-space: nowrap;
+      text-shadow: none;
+    }
+    .value {
+      background: #3c9c05;
+      border: 0;
+      color: white;
+      font-size: 11px;
+      margin: 3px 0 0;
+      padding: 3px 5px;
+      white-space: nowrap;
+      text-shadow: none;
+      sup {
+        top: -2px;
+        margin-right: 1px;
+        font-size: 75%;
+      }
+    }
+  }
+  .bottom {
+    sup,
+    .name,
+    .value {
+      color: #333;
+      white-space: nowrap;
+      text-shadow: none;
+    }
+    .name,
+    .value {
+      font-size: 11px;
+    }
+    .value {
+      border-color: #333;
+    }
+  }
+}
+
+.nvcwidget-price-graph {
+  color: black;
+  font: bold 9px/1 @fontFamily;
+  padding: 0;
+  margin: 5px;
+
+  .left {
+    float: left;
+    position: relative;
+    max-width: 100%;
+    max-width: 99.99%\0; // fix for IE8A
+    width: 45%;
+
+    .middle {
+      left: 100%;
+      position: absolute;
+      top: 0;
+      margin-left: -8px;
+    }
+
+  }
+  .dash {
+    background-color:#003400;
+    position: absolute;
+    display: block;
+    height: 5px;
+    margin-top: -3px;
+    left: 0%;
+    top: 8px;
+    width: 2px;
+    z-index: 0;
+    &.rights {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .left + .right {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .graph {
+    padding: 6px 0 6px;
+    position: relative;
+
+    &, .left, .right, .middle {
+      height: 3px;
+    }
+
+    .left {
+      background-color: #2b7502;
+    }
+
+    .right {
+      background-color: #c53b3d;
+    }
+
+    .middle {
+      background: url(@simplePricePointerSprite) 0 0 no-repeat;
+      display: block;
+      height: 9px;
+      margin-top: -3px;
+      margin-left: -3px;
+      top: 0;
+      width: 9px;
+      z-index: 1;
+    }
+  }
+
+  .name {
+    color: #003300;
+    text-shadow: 0 1px 0 #427B19;
+  }
+  .value {
+    color: white;
+    display: inline-block;
+    border-bottom: 1px dotted #fff;
+    line-height: 100%;
+    position: relative;
+    &:hover {
+      cursor:pointer;
+      .nvcwidget-tooltip {
+        display:block;
+      }
+    }
+  }
+  .top {
+    text-align: right;
+    .top-inner {
+      display: inline-block;
+      text-align: left;
+      .name {
+        text-align: left;
+        width: 90px;
+      }
+    }
+    .value { text-shadow: 0px -1px 0px #479012; }
+    sup {
+      font-size: 12px;
+      margin-right: 2px;
+    }
+
+    .name {
+      margin-bottom: 0;
+    }
+  }
+  .bottom {
+    sup {
+      color: white;
+      top: -2px;
+      margin-right: 1px;
+    }
+    .right {
+      overflow: inherit;
+    }
+  }
+}

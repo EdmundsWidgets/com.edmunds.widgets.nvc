@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Edmunds NVC Widget Example</title>
+</head>
+<body>
+
+<!-- Content of your page -->
+
+<div id="nvcwidget"><!-- Edmunds NVC Widget will be rendered here --></div>
+
+<!-- Content of your page -->
+
+<!-- THE BOTTOM OF YOUR PAGE -->
+
+<!-- Google Analytics snippet -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'YOUR_GOOGLE_ANALYTICS_ID']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!--/Google Analytics snippet -->
+
+<!-- Edmunds NVC Widget snippet -->
+
+<script type="text/javascript" src="<%= widgetLoaderUrl %>"></script>
+<script type="text/javascript">
+(function() {
+
+    /* create the widget */
+    var widget = EDM.createWidget({
+        renderTo: 'nvcwidget',
+        style: {
+            height: 890,
+            width: 250,
+            theme: 'red',
+            color: 'light',
+            border: '1px',
+            borderRadius: '20px'
+        },
+        options: {
+            apiKey: 'axr2rtmnj63qsth3ume3tv5f',
+            includedMakes: 'bmw,ford',
+            dealerKeywords: [],
+            zipCode: '10001',
+            tabs: {
+                tab1: 'Configure',
+                tab2: 'TMV&reg;',
+                tab3: 'Price Quote'
+            }
+        }
+    });
+
+    /* example of event subscription */
+    widget.on('makechange', function(make) {
+        console.log('test makechange');
+        _gaq.push(['_trackEvent', 'Edmunds NVC Widget', 'Select a make', make.id]);
+    });
+
+}());
+</script>
+<!--/Edmunds NVC Widget snippet -->
+
+</body>
+</html>

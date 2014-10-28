@@ -1,9 +1,34 @@
 {
   "name": "com.edmunds.widgets.nvc",
+  "description": "Edmunds Widgets NVC",
   "version": "0.0.1",
-  "description": "Edmunds New Vehicle Configurator Widget",
   "private": true,
   "scripts": {
-    "install": "bower install"
+    "start": "node app"
+  },
+  "dependencies": {
+    "async": "~0.2.5",
+    "ejs": "0.8.4",
+    "express": "3.1.0",
+    "less": "~1.3.3",
+    "less-middleware": "0.1.11",
+    "path": "~0.4.9",
+    "temp": "~0.5.0",
+    "http-proxy": "~0.10.2",
+    "url": "~0.7.9"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-concat": "~0.1.2",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-less": "~0.5.0",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt-contrib-yuidoc": "~0.4.0"
   }
 }

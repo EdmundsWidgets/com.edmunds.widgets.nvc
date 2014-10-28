@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>iframe test</title>
+</head>
+<body>
+
+<div id="nvcwidget"></div>
+<script>
+(function(d, id){
+    var e = encodeURIComponent, r, i;
+    if (r = d.getElementById(id)) {
+        i = d.createElement('iframe');
+        i.setAttribute('frameBorder', '0');
+        i.setAttribute('scrolling', 'no');
+        i.setAttribute('height', '891');
+        i.setAttribute('width', '250');
+        i.setAttribute('src', '/nvc/iframe?' + [
+            'vak=g2dgxhfatcspkunbb7m33zv6',
+            'dak=gmxhexjaxgd528wtxdf9fs8y',
+            'cs=light',
+            'im='  + e('acura,alfa-romeo,aston-martin,audi,bentley,bmw,buick,cadillac,chevrolet,chrysler,dodge,ferrari,fiat,fisker,ford,gmc,honda,hyundai,infiniti,jaguar,jeep,kia,lamborghini,land-rover,lexus,lincoln,lotus,maserati,maybach,mazda,mclaren,mercedes-benz,mini,mitsubishi,nissan,porsche,ram,rolls-royce,saab,scion,smart,subaru,suzuki,tesla,toyota,volkswagen,volvo'),
+            'zip=' + e('12345'),
+            'dk='  + e('["a,b","b","c","d","e"]')
+        ].join('&'));
+        r.appendChild(i);
+    }
+}(document, 'nvcwidget'));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+.nvcwidget button {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font: bold 10px @fontFamily;
+  height: 24px;
+  line-height: 22px;
+  margin: 0;
+  padding: 0 24px;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  .border-radius(0px);
+  &.button-small {
+    height: 18px;
+    line-height: 16px;
+    padding: 0 17px;
+  }
+  &.button-light {
+    padding: 0 10px;
+  }
+}
+
+// Default state
+.nvcwidget button {
+  .buttonBackground(@buttonDefaultStartColor,
+                @buttonDefaultEndColor,
+                @buttonDefaultBorderColor,
+                @buttonDefaultTextColor);
+  &.button-light {
+  .buttonBackground(@buttonLightStartColor,
+                @buttonLightEndColor,
+                @buttonLightBorderColor,
+                @buttonLightTextColor);
+  }
+  &.button-yellow {
+  .buttonBackground(@buttonYellowStartColor,
+                @buttonYellowEndColor,
+                @buttonYellowEndColor,
+                @buttonDefaultTextColor);
+  }
+  &.button-green {
+  .buttonBackground(@buttonGreenEndColor,
+                @buttonGreenStartColor,
+                @buttonGreenBorderColor,
+                @buttonDefaultTextColor);
+  }
+}
+
+// Active and Hover state
+.nvcwidget button:active,
+.nvcwidget button:hover {
+  .buttonBackground(@buttonHoverStartColor,
+                @buttonHoverEndColor,
+                @buttonDefaultBorderColor,
+                @buttonDefaultTextColor);
+  &.button-light {
+  .buttonBackground(@buttonLightHoverStartColor,
+                @buttonLightHoverEndColor,
+                @buttonLightBorderColor,
+                @buttonDefaultTextColor);
+  }
+  &.button-yellow {
+  .buttonBackground(@buttonYellowEndColor,
+                @buttonYellowStartColor,
+                @buttonYellowEndColor,
+                @buttonDefaultTextColor);
+  }
+  &.button-green {
+  .buttonBackground(@buttonGreenStartColor,
+                @buttonGreenEndColor,
+                @buttonGreenBorderColor,
+                @buttonDefaultTextColor);
+  }
+}
+
+// Disabled state
+.nvcwidget button[disabled],
+.nvcwidget button[disabled].button-yellow,
+.nvcwidget button[disabled].button-green,
+.nvcwidget button[disabled].button-light {
+  cursor: default;
+  .buttonBackground(@buttonDisabledStartColor,
+                @buttonDisabledEndColor,
+                @buttonDisabledBorderColor,
+                @buttonDisabledTextColor);
+}

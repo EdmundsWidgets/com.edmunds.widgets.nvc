@@ -1,0 +1,41 @@
+.nvcwidget {
+  background: url(@wave) 0 bottom repeat-x;
+  .border-top-radius(@borderRadius - @borderWidth);
+  .border-bottom-radius(0);
+  border: 0;
+  padding-bottom: 5px;
+
+  .title {
+    color: #bf2f37;
+  }
+
+  .copy {
+    color: #285b8e;
+  }
+
+  .logo {
+    background: url(@edmDefaultLogo) 0 0 no-repeat;
+  }
+
+}
+
+.nvcwidget-header {
+  background: url(@titleLight) 0 bottom repeat-x;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 15px;
+
+  .question {
+    background: url(@questionSign) no-repeat 0 0;
+  }
+
+}
+
+.nvcwidget-header .logo { display: none; }
+
+.nvcwidget-inner {
+  background: url(@stripLight) 0 bottom repeat-x;
+  border: 1px solid #c8c9c9;
+  border-bottom: 0;
+  .border-top-radius(@borderRadius - @borderWidth);
+}

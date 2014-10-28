@@ -1,0 +1,19 @@
+@import "../mixins.less";
+@import "../images.less";
+@import "../variables.less";
+
+.tmvwidget {
+  	.border-top-radius(@borderRadius);
+  	.border-bottom-radius(0);
+  	border: 0;
+  	width: @width - 2 * @borderWidth;
+
+  	.tmvwidget-header {
+  		.border-top-radius(@borderRadius);
+	}
+	.tmvwidget-inner {
+      .border-top-radius(@borderRadius);
+      border-width: @borderWidth;
+      border-bottom: 0;
+	}
+}

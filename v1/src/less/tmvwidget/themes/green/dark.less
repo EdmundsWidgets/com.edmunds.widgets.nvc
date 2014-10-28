@@ -1,0 +1,36 @@
+.tmvwidget {
+  background: #333;
+  border: @borderWidth solid #404040;
+
+  .logo, .copy, .title {
+    color: #999;
+  }
+
+  .logo {
+    background: url(@edmWhiteLogo) 100% 0 no-repeat;
+  }
+
+}
+
+.tmvwidget-inner {
+  .border-radius(@borderRadius - @borderWidth);
+}
+
+.tmvwidget-header {
+  border-bottom: 1px solid #4d4d4d;
+  .logo { display: none; }
+
+  .question {
+    background: url(@questionSignDark) no-repeat 0 0;
+  }
+
+}
+
+.tmvwidget-price {
+  border-color: black;
+
+  &.disabled {
+    border-color: black;
+  }
+
+}
